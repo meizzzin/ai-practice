@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>慶豐富 AI 初階｜練習素材</title>
+<style>
+  :root {
+    --ink:#2F3438; --sub:#6B7680; --blue:#3E6FA8; --blue-d:#2C5384;
+    --bg:#F2F4F7; --card:#FFFFFF; --yellow:#FDF6DA; --line:#DCE1E7; --ok:#2E7D4F;
+  }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body {
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC","Heiti TC",sans-serif;
+    font-size:17px; line-height:1.6;
+    padding:16px 16px calc(32px + env(safe-area-inset-bottom));
+  }
+  .wrap { max-width:560px; margin:0 auto; }
+  @media (min-width:900px) { .wrap { max-width:720px; } }
+  header .kicker { color:var(--blue); font-weight:700; font-size:14px; letter-spacing:.06em; }
+  header h1 { font-size:26px; margin:2px 0 6px; line-height:1.3; }
+  .note { background:var(--yellow); border-radius:10px; padding:10px 12px; font-size:15px; margin:10px 0 18px; }
+  h2 { font-size:19px; margin:26px 0 10px; }
+  ol.steps { margin:0; padding-left:1.4em; }
+  ol.steps li { margin:2px 0; }
+  .tabs { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:6px 0 12px; }
+  .tab {
+    appearance:none; border:2px solid var(--line); background:var(--card); color:var(--ink);
+    border-radius:12px; padding:10px 4px; font:inherit; cursor:pointer;
+    display:flex; flex-direction:column; align-items:center; gap:2px; min-height:64px;
+  }
+  .tab-name { font-weight:700; font-size:18px; }
+  .tab-sub { font-size:12px; color:var(--sub); line-height:1.3; text-align:center; }
+  .tab[aria-selected="true"] { border-color:var(--blue); background:#E8F0FA; }
+  .tab[aria-selected="true"] .tab-name { color:var(--blue-d); }
+  .panel { background:var(--card); border-radius:14px; padding:14px; }
+  .copy {
+    appearance:none; border:0; font:inherit; cursor:pointer; color:#fff; background:var(--blue);
+    border-radius:12px; font-weight:700; touch-action:manipulation;
+  }
+  .copy:active { transform:scale(.98); }
+  .copy.big { width:100%; min-height:58px; font-size:19px; }
+  .copy.small { min-width:68px; min-height:44px; font-size:15px; padding:0 12px; flex:none; }
+  .copy.done { background:var(--ok); }
+  .hint { color:var(--sub); font-size:14px; margin:8px 2px 4px; }
+  details { margin-top:8px; border-top:1px solid var(--line); padding-top:8px; }
+  summary { color:var(--blue); cursor:pointer; padding:6px 0; font-size:15px; }
+  pre {
+    white-space:pre-wrap; word-break:break-word; font-family:inherit; font-size:15px;
+    background:var(--bg); border-radius:10px; padding:12px; margin:8px 0 0;
+    max-height:60vh; overflow:auto;
+  }
+  }
+  footer { margin-top:26px; font-size:14px; color:var(--sub); }
+  footer b { color:var(--ink); }
+  .toast {
+    position:fixed; left:50%; bottom:calc(20px + env(safe-area-inset-bottom)); transform:translateX(-50%);
+    background:#2F3438; color:#fff; padding:10px 18px; border-radius:999px; font-size:15px;
+    opacity:0; transition:opacity .2s; pointer-events:none;
+  }
+  .toast.show { opacity:.95; }
+  textarea.fallback { position:fixed; top:0; left:0; width:1px; height:1px; opacity:0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">慶豐富 AI 職能養成計畫｜初階</div>
+    <h1>練習素材</h1>
+  </header>
+  <div class="note">這裡的內容全部是<b>虛構的練習題</b>。課堂上不得使用任何真實客戶資料。</div>
+
+  <h2>怎麼用</h2>
+  <ol class="steps">
+    <li>選你拿到的版本</li>
+    <li>按「複製素材」</li>
+    <li>回到 Copilot 貼上（手機：長按輸入框 →「貼上」；電腦：Ctrl+V），接著打上你要問的話</li>
+  </ol>
+
+  <h2>選你的版本</h2>
+  <div class="tabs" role="tablist"><button class="tab" role="tab" data-v="sales" aria-selected="false"><span class="tab-name">業務版</span><span class="tab-sub">客訴訊息 15 則</span></button><button class="tab" role="tab" data-v="purch" aria-selected="false"><span class="tab-name">採購版</span><span class="tab-sub">三家供應商報價</span></button><button class="tab" role="tab" data-v="admin" aria-selected="false"><span class="tab-name">管理版</span><span class="tab-sub">一週交辦與雜事 15 則</span></button></div>
+  
+<section class="panel" id="p-sales" hidden>
+  <button class="copy big" data-copy-mat="sales">複製業務版素材</button>
+  <p class="hint">按一下就複製好了，回到 Copilot 貼上。</p>
+  <details>
+    <summary>看一下素材內容</summary>
+    <pre>一串雜亂的客訴訊息，15 則，時間順序已打亂，管道混雜（Teams／Email／LINE）。
+（01）09/08 10:12　Teams．業務 阿凱
+A 客戶那邊又來電，說上週交的軌道有 3 組會異音，問我們要怎麼處理。
+他們 9/18 要出貨給終端，很急。
+
+（02）09/05 16:40　Email．業務 Ivy
+B 客戶回報遮光布顏色跟前一批不一樣，他們並排看得出來。附了照片。問可不可以換。
+
+（03）09/09 08:55　LINE．業務助理 小周
+提醒一下，下週三的業務會議改到週四下午 2 點。
+
+（04）09/08 11:30　Teams．品保 老張
+軌道異音我們拆了一組看，是滑輪的塑膠件有毛邊。
+同一批出去的有 12 組，建議全部先確認。
+
+（05）09/03 14:20　Email．C 客戶
+外箱有兩箱壓損，裡面的布沒事。這次先不用處理，下次麻煩加強一下。
+
+（06）09/09 09:40　Teams．業務 阿凱
+A 客戶剛剛又打來問進度。他說如果 9/18 來不及，他要先跟他的客戶講。
+
+（07）09/06 13:05　LINE．業務 Ivy
+D 客戶的蜂巢簾拉繩卡住，他們自己弄開了。說不用處理，但希望我們注意。
+
+（08）09/04 17:12　Email．B 客戶
+補充一下，色差那批是 8 月中收到的，批號在箱外標籤上。
+我們手上還有 40 才沒動。
+
+（09）09/09 15:22　Teams．生產課長
+滑輪那個供應商的料，我們 8 月換過一次廠商。要不要先把庫存的挑出來？
+
+（10）09/07 09:18　LINE．業務 阿凱
+A 客戶說異音是拉到底的時候才有，平常不明顯。
+
+（11）09/09 16:05　Email．E 客戶
+想問一下羅馬簾的最小訂量是多少？
+
+（12）09/02 11:44　Teams．業務 Ivy
+C 客戶的壓損那件我已經回覆了，下次出貨會多加一層護角。這件結案。
+
+（13）09/09 17:30　Teams．品保 老張
+12 組裡面目前確認到 5 組有毛邊。剩下的明天上午可以看完。
+
+（14）09/08 14:50　Email．B 客戶
+如果不能換，可以折讓嗎？我們這邊工期也在等。
+
+（15）09/10 08:20　LINE．業務助理 小周
+A 客戶的窗口今天早上又問了一次，我先說會回覆他。</pre>
+  </details>
+</section>
+<section class="panel" id="p-purch" hidden>
+  <button class="copy big" data-copy-mat="purch">複製採購版素材</button>
+  <p class="hint">按一下就複製好了，回到 Copilot 貼上。</p>
+  <details>
+    <summary>看一下素材內容</summary>
+    <pre>三家供應商的散文式報價敘述，加上兩則內部訊息。單位、幣別、含稅與否都不一致。
+採購標的：遮光布 BO-300，幅寬 280cm。預計年用量約 6,000 米。
+
+【甲廠．彰化】09/05　Email
+BO-300 幅寬 280，每米 NT$185，含稅。訂量 500 米以上可以到 178。
+交期大約三週，量大要再抓一點時間。付款條件月結 60 天。
+另外提醒一下，我們這個色系目前只有 5 個標準色，特殊色要另外開版，開版費 NT$8,000。
+
+【甲廠．彰化】09/08　LINE．補充
+剛剛跟廠內確認過，如果一次下 2,000 米以上可以到 172，
+但要一次交完，不能分批。
+
+【乙廠．越南】09/04　Email
+Blackout fabric, same spec. USD 5.6 per yard. MOQ 800 yards.
+Lead time 20 working days after PO.
+Payment: T/T 30% deposit, balance before shipment.
+Price is FOB, tax not included. Standard colors: 12.
+Custom color available, sample fee USD 150.
+
+【乙廠．越南】09/09　Email．補充
+For orders above 3,000 yards, we can offer USD 5.35.
+Please note our roll length is 50 yards per roll.
+
+【丙廠．中國】09/06　業務口頭轉述（小周記的）
+丙廠說可以做到人民幣 38 元一米，不過那是 250cm 幅寬的，280 的要加 12%。
+最小訂量他說「差不多一個櫃」，我再問他確切數字。
+交期他說看排程，快的話兩週。付款他說要先付一半。
+
+【丙廠．中國】09/10　業務口頭轉述
+剛剛問到了，一個櫃大概 4,000 米。
+另外他們報價是未稅，進口還要算關稅。
+
+【內部】09/09　Teams．生產課長
+提醒一下，我們排程上 10 月底之前要進第一批，至少 1,500 米。
+
+【內部】09/03　Teams．品保 老張
+乙廠去年那批遮光率有兩捲不達標，退了。
+這次要記得要求出貨前附檢測報告。</pre>
+  </details>
+</section>
+<section class="panel" id="p-admin" hidden>
+  <button class="copy big" data-copy-mat="admin">複製管理版素材</button>
+  <p class="hint">按一下就複製好了，回到 Copilot 貼上。</p>
+  <details>
+    <summary>看一下素材內容</summary>
+    <pre>一週的交辦紀錄與部門雜事訊息，15 則，依時間排列但混雜未完成、已完成與無關事項。
+（01）週一 08:40　Teams．課長
+這週要把部門的教育訓練時數統計交出去，誰負責？
+
+（02）週一 09:15　LINE．小周
+3 樓那台印表機又卡紙，我請廠商來看了。
+
+（03）週一 11:02　Teams．課長
+越南廠要的樣品，這週一定要寄出。阿凱你確認一下是哪幾款。
+
+（04）週一 14:30　Teams．Ivy
+上次那份費用申請財務退回來，說附件少一張收據。
+
+（05）週二 08:55　Teams．課長
+下個月的部門會議室先訂起來，第二週週三。
+
+（06）週二 10:20　LINE．阿凱
+越南樣品有三款，其中一款布還沒到。
+
+（07）週二 16:40　Teams．小周
+印表機修好了。
+
+（08）週三 09:00　Teams．課長
+A 客戶那個案子的報價，這週五之前要給我看過。
+
+（09）週三 09:30　Teams．Ivy
+新人下週一報到，座位跟電腦要先準備。
+
+（10）週三 13:50　Teams．品保 老張
+年度校驗的清單我放共用資料夾了，大家確認一下自己負責的部分。
+
+（11）週三 15:10　Teams．課長
+教育訓練時數那個，還沒人回我。
+
+（12）週四 08:30　LINE．阿凱
+越南樣品今天寄了，追蹤號等等給你們。
+
+（13）週四 11:45　Teams．Ivy
+新人的電腦資訊部說要三個工作天，可能來不及。
+
+（14）週四 17:20　Teams．課長
+這週五下午我要出去，報價的事改成週五早上跟我講。
+
+（15）週五 09:05　LINE．小周
+下週要換飲水機濾心，我約了下週二。</pre>
+  </details>
+</section>
+
+  <footer>
+    <p><b>開始前先確認：</b>Copilot 右上角登入的是<b>公司帳號</b>，不是個人帳號。</p>
+    <p>不要用「附加檔案」，一律貼上文字。</p>
+  </footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+var MAT = {"sales": "一串雜亂的客訴訊息，15 則，時間順序已打亂，管道混雜（Teams／Email／LINE）。\n（01）09/08 10:12　Teams．業務 阿凱\nA 客戶那邊又來電，說上週交的軌道有 3 組會異音，問我們要怎麼處理。\n他們 9/18 要出貨給終端，很急。\n\n（02）09/05 16:40　Email．業務 Ivy\nB 客戶回報遮光布顏色跟前一批不一樣，他們並排看得出來。附了照片。問可不可以換。\n\n（03）09/09 08:55　LINE．業務助理 小周\n提醒一下，下週三的業務會議改到週四下午 2 點。\n\n（04）09/08 11:30　Teams．品保 老張\n軌道異音我們拆了一組看，是滑輪的塑膠件有毛邊。\n同一批出去的有 12 組，建議全部先確認。\n\n（05）09/03 14:20　Email．C 客戶\n外箱有兩箱壓損，裡面的布沒事。這次先不用處理，下次麻煩加強一下。\n\n（06）09/09 09:40　Teams．業務 阿凱\nA 客戶剛剛又打來問進度。他說如果 9/18 來不及，他要先跟他的客戶講。\n\n（07）09/06 13:05　LINE．業務 Ivy\nD 客戶的蜂巢簾拉繩卡住，他們自己弄開了。說不用處理，但希望我們注意。\n\n（08）09/04 17:12　Email．B 客戶\n補充一下，色差那批是 8 月中收到的，批號在箱外標籤上。\n我們手上還有 40 才沒動。\n\n（09）09/09 15:22　Teams．生產課長\n滑輪那個供應商的料，我們 8 月換過一次廠商。要不要先把庫存的挑出來？\n\n（10）09/07 09:18　LINE．業務 阿凱\nA 客戶說異音是拉到底的時候才有，平常不明顯。\n\n（11）09/09 16:05　Email．E 客戶\n想問一下羅馬簾的最小訂量是多少？\n\n（12）09/02 11:44　Teams．業務 Ivy\nC 客戶的壓損那件我已經回覆了，下次出貨會多加一層護角。這件結案。\n\n（13）09/09 17:30　Teams．品保 老張\n12 組裡面目前確認到 5 組有毛邊。剩下的明天上午可以看完。\n\n（14）09/08 14:50　Email．B 客戶\n如果不能換，可以折讓嗎？我們這邊工期也在等。\n\n（15）09/10 08:20　LINE．業務助理 小周\nA 客戶的窗口今天早上又問了一次，我先說會回覆他。", "purch": "三家供應商的散文式報價敘述，加上兩則內部訊息。單位、幣別、含稅與否都不一致。\n採購標的：遮光布 BO-300，幅寬 280cm。預計年用量約 6,000 米。\n\n【甲廠．彰化】09/05　Email\nBO-300 幅寬 280，每米 NT$185，含稅。訂量 500 米以上可以到 178。\n交期大約三週，量大要再抓一點時間。付款條件月結 60 天。\n另外提醒一下，我們這個色系目前只有 5 個標準色，特殊色要另外開版，開版費 NT$8,000。\n\n【甲廠．彰化】09/08　LINE．補充\n剛剛跟廠內確認過，如果一次下 2,000 米以上可以到 172，\n但要一次交完，不能分批。\n\n【乙廠．越南】09/04　Email\nBlackout fabric, same spec. USD 5.6 per yard. MOQ 800 yards.\nLead time 20 working days after PO.\nPayment: T/T 30% deposit, balance before shipment.\nPrice is FOB, tax not included. Standard colors: 12.\nCustom color available, sample fee USD 150.\n\n【乙廠．越南】09/09　Email．補充\nFor orders above 3,000 yards, we can offer USD 5.35.\nPlease note our roll length is 50 yards per roll.\n\n【丙廠．中國】09/06　業務口頭轉述（小周記的）\n丙廠說可以做到人民幣 38 元一米，不過那是 250cm 幅寬的，280 的要加 12%。\n最小訂量他說「差不多一個櫃」，我再問他確切數字。\n交期他說看排程，快的話兩週。付款他說要先付一半。\n\n【丙廠．中國】09/10　業務口頭轉述\n剛剛問到了，一個櫃大概 4,000 米。\n另外他們報價是未稅，進口還要算關稅。\n\n【內部】09/09　Teams．生產課長\n提醒一下，我們排程上 10 月底之前要進第一批，至少 1,500 米。\n\n【內部】09/03　Teams．品保 老張\n乙廠去年那批遮光率有兩捲不達標，退了。\n這次要記得要求出貨前附檢測報告。", "admin": "一週的交辦紀錄與部門雜事訊息，15 則，依時間排列但混雜未完成、已完成與無關事項。\n（01）週一 08:40　Teams．課長\n這週要把部門的教育訓練時數統計交出去，誰負責？\n\n（02）週一 09:15　LINE．小周\n3 樓那台印表機又卡紙，我請廠商來看了。\n\n（03）週一 11:02　Teams．課長\n越南廠要的樣品，這週一定要寄出。阿凱你確認一下是哪幾款。\n\n（04）週一 14:30　Teams．Ivy\n上次那份費用申請財務退回來，說附件少一張收據。\n\n（05）週二 08:55　Teams．課長\n下個月的部門會議室先訂起來，第二週週三。\n\n（06）週二 10:20　LINE．阿凱\n越南樣品有三款，其中一款布還沒到。\n\n（07）週二 16:40　Teams．小周\n印表機修好了。\n\n（08）週三 09:00　Teams．課長\nA 客戶那個案子的報價，這週五之前要給我看過。\n\n（09）週三 09:30　Teams．Ivy\n新人下週一報到，座位跟電腦要先準備。\n\n（10）週三 13:50　Teams．品保 老張\n年度校驗的清單我放共用資料夾了，大家確認一下自己負責的部分。\n\n（11）週三 15:10　Teams．課長\n教育訓練時數那個，還沒人回我。\n\n（12）週四 08:30　LINE．阿凱\n越南樣品今天寄了，追蹤號等等給你們。\n\n（13）週四 11:45　Teams．Ivy\n新人的電腦資訊部說要三個工作天，可能來不及。\n\n（14）週四 17:20　Teams．課長\n這週五下午我要出去，報價的事改成週五早上跟我講。\n\n（15）週五 09:05　LINE．小周\n下週要換飲水機濾心，我約了下週二。"};
+
+function toast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 1800);
+}
+
+function fallbackCopy(text) {
+  var ta = document.createElement('textarea');
+  ta.className = 'fallback'; ta.value = text; ta.setAttribute('readonly', '');
+  document.body.appendChild(ta);
+  ta.focus(); ta.select(); ta.setSelectionRange(0, text.length);
+  var ok = false;
+  try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+  document.body.removeChild(ta);
+  return ok;
+}
+
+function copyText(text, btn) {
+  var done = function () {
+    var old = btn.dataset.label || btn.textContent;
+    btn.dataset.label = old;
+    btn.textContent = '已複製 ✓'; btn.classList.add('done');
+    toast('已複製，回 Copilot 貼上');
+    setTimeout(function () { btn.textContent = old; btn.classList.remove('done'); }, 1800);
+  };
+  var fail = function () {
+    if (fallbackCopy(text)) { done(); return; }
+    toast('無法自動複製，請打開下方內容自行選取複製');
+    var d = btn.parentNode.querySelector('details'); if (d) d.open = true;
+  };
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(done, fail);
+  } else { fail(); }
+}
+
+function select(v) {
+  document.querySelectorAll('.tab').forEach(function (b) {
+    b.setAttribute('aria-selected', b.dataset.v === v ? 'true' : 'false');
+  });
+  document.querySelectorAll('.panel').forEach(function (p) {
+    p.hidden = (p.id !== 'p-' + v);
+  });
+}
+
+document.querySelectorAll('.tab').forEach(function (b) {
+  b.addEventListener('click', function () { select(b.dataset.v); history.replaceState(null, '', '#' + b.dataset.v); });
+});
+document.querySelectorAll('[data-copy-mat]').forEach(function (b) {
+  b.addEventListener('click', function () { copyText(MAT[b.dataset.copyMat], b); });
+});
+
+var h = (location.hash || '').replace('#', '');
+select(MAT[h] ? h : 'sales');
+</script>
+</body>
+</html>
